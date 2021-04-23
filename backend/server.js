@@ -2,14 +2,17 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 const mongoose = require('mongoose');
 const todoRoutes = express.Router();
+const public = path.join(__dirname, 'home');
 const PORT = 5000;
 
 let Todo = require('./model/todo.model');
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'home')));
 
 mongoose.connect('mongodb://127.0.0.1:27017/reciepeC', { useNewUrlParser: true });
 const connection = mongoose.connection;
