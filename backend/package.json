@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "cross-env NODE_ENV=development nodemon server.js",
+    "start-prod": "cross-env NODE_ENV=production nodemon server-prod.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
